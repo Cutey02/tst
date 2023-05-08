@@ -353,9 +353,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/KennedyProject/44"),
+                                "Health", url="https://t.me/pikachoolog/157"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/KennedyProject/43")
+                                "Disaster", url="https://t.me/pikachoolog/157")
                         ],
                     ]
                 ),
@@ -371,9 +371,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/KennedyProject/44"),
+                                "Health", url="https://t.me/pikachoolog/157"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/KennedyProject/43")
+                                "Disaster", url="https://t.me/pikachoolog/157")
                         ],
                     ]
                 ),
@@ -447,7 +447,7 @@ def set_about_me(update: Update, context: CallbackContext):
 def stats(update: Update, context: CallbackContext):
     stats = "<b>╔═━「 Current Emiko Statistics 」</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    result += "\n<b>╘═━「 Powered By kennedy-ex 」</b>"
+    result += "\n<b>╘═━「 Powered By Tᴇᴀм Rᴇмo 」</b>"
     update.effective_message.reply_text(
         result,
         parse_mode=ParseMode.HTML, 
@@ -501,7 +501,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust the Ackermans to set my bio.",
+                "Hey... yeah, I only trust the Ackermans to set my bio.",
             )
             return
 
@@ -569,7 +569,7 @@ When marked as AFK, any mentions will be replied to with a message stating that 
   - brb <reason>: Same as the afk command, but not a command. 
   
 *What is that health thingy?*
- Come and see [HP System explained](https://t.me/KennedyProject/44)
+ Come and see [HP System explained](https://t.me/pikachoolog/157)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio, run_async=True)

@@ -61,7 +61,7 @@ async def mentionall(event):
             break
         usrnum += 1
         usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}), "
-        if usrnum == 5:
+        if usrnum == 1:
             if mode == "text_on_cmd":
                 txt = f"{msg}\n{usrtxt}"
                 await client.send_message(chat_id, txt)
@@ -113,7 +113,7 @@ __mod_name__ = "Tag all"
 __help__ = """
 ──「 Mention all func 」──
 
-Emiko Can Be a Mention Bot for your group.
+Dᴀɴԍᴇʀous Roʙoт Can Be a Mention Bot for your group.
 
 Only admins can tag all.  here is a list of commands
 

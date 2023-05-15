@@ -15,18 +15,25 @@ spam_chats = []
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
-        return await event.respond(
-            "__This command can be use in groups and channels!__"
-        )
+        return await event.respond("__This command can be use in groups and channels!__")
 
     is_admin = False
     try:
-        partici_ = await client(GetParticipantRequest(event.chat_id, event.sender_id))
+        partici_ = await client(GetParticipantRequest(
+            event.chat_id,
+            event.sender_id
+        ))
     except UserNotParticipantError:
         is_admin = False
     else:
-        if isinstance(
-            partici_.participant, (ChannelParticipantAdmin, ChannelParticipantCreator)
+        if (
+                isinstance(
+                    partici_.participant,
+                    (
+                            ChannelParticipantAdmin,
+                            ChannelParticipantCreator
+                    )
+                )
         ):
             is_admin = True
     if not is_admin:
@@ -42,22 +49,19 @@ async def mentionall(event):
         msg = await event.get_reply_message()
         if msg == None:
             return await event.respond(
-                "__I can't mention members for older messages! (messages which are sent before I'm added to group)__"
-            )
+                "__I can't mention members for older messages! (messages which are sent before I'm added to group)__")
     else:
-        return await event.reply(
-            "__Reply to a message or give me some text to mention others!__"
-        )
+        return await event.reply("__Reply to a message or give me some text to mention others!__")
 
     spam_chats.append(chat_id)
     usrnum = 0
-    usrtxt = ""
+    usrtxt = ''
     async for usr in client.iter_participants(chat_id):
         if not chat_id in spam_chats:
             break
-        usrnum += 1
+        usrnum += 2
         usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}), "
-        if usrnum == 5:
+        if usrnum == 1:
             if mode == "text_on_cmd":
                 txt = f"{msg}\n{usrtxt}"
                 await client.send_message(chat_id, txt)
@@ -65,7 +69,7 @@ async def mentionall(event):
                 await msg.reply(usrtxt)
             await asyncio.sleep(2)
             usrnum = 0
-            usrtxt = ""
+            usrtxt = ''
     try:
         spam_chats.remove(chat_id)
     except:
@@ -76,12 +80,21 @@ async def mentionall(event):
 async def cancel_spam(event):
     is_admin = False
     try:
-        partici_ = await client(GetParticipantRequest(event.chat_id, event.sender_id))
+        partici_ = await client(GetParticipantRequest(
+            event.chat_id,
+            event.sender_id
+        ))
     except UserNotParticipantError:
         is_admin = False
     else:
-        if isinstance(
-            partici_.participant, (ChannelParticipantAdmin, ChannelParticipantCreator)
+        if (
+                isinstance(
+                    partici_.participant,
+                    (
+                            ChannelParticipantAdmin,
+                            ChannelParticipantCreator
+                    )
+                )
         ):
             is_admin = True
     if not is_admin:
@@ -100,7 +113,7 @@ __mod_name__ = "Tag all"
 __help__ = """
 ──「 Mention all func 」──
 
-Emiko Can Be a Mention Bot for your group.
+Dᴀɴԍᴇʀous Roʙoт Can Be a Mention Bot for your group.
 
 Only admins can tag all.  here is a list of commands
 

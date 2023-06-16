@@ -386,7 +386,7 @@ def emiko_about_callback(update, context):
                     InlineKeyboardButton(text="ʙᴀᴅ ʙᴏʏ", url="https://t.me/badboybiografia"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="source_back"),
+                    InlineKeyboardButton(text="◤Go Back◢", callback_data="source_back"),
                  ]
                 ]
             ),
@@ -405,7 +405,7 @@ def emiko_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="emiko_")]]
+                [[InlineKeyboardButton(text="◤Go Back◢", callback_data="emiko_")]]
             ),
         )
 
@@ -417,7 +417,7 @@ def emiko_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="emiko_")]]
+                [[InlineKeyboardButton(text="◤Go Back◢", callback_data="emiko_")]]
             ),
         )
     elif query.data == "emiko_support":
@@ -432,7 +432,7 @@ def emiko_about_callback(update, context):
                     InlineKeyboardButton(text="Updates", url="https://t.me/Team_Remo"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="emiko_"),
+                    InlineKeyboardButton(text="◤Go Back◢", callback_data="emiko_"),
                  
                  ]
                 ]
@@ -451,6 +451,9 @@ def emiko_about_callback(update, context):
                     InlineKeyboardButton(text="яємσ", url="https://t.me/remo_editz"),
                     InlineKeyboardButton(text="Status", url="https://t.me/TamilStatusForGirl"),
                  ],
+                 [
+                InlineKeyboardButton(text="◤Go Back◢", callback_data="emiko_"),
+                 ]
                 ]
             ),
         )
@@ -475,7 +478,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="emiko_")
+                    InlineKeyboardButton(text="◤Go Back◢", callback_data="emiko_")
                  ]
                 ]
             ),
@@ -546,7 +549,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="◤Go Back◢", callback_data="help_back")]]
             ),
         )
 
@@ -618,7 +621,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Go Back",
+                                text="◤Go Back◢",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
